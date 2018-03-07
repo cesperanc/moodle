@@ -183,6 +183,8 @@ if ($returnto === 'profile') {
     } else {
         $returnurl = new moodle_url('/user/profile.php', array('id' => $user->id));
     }
+} else if (!empty($SESSION->wantsurl)) {
+    $returnurl = $SESSION->wantsurl;
 } else {
     $returnurl = new moodle_url('/user/preferences.php', array('userid' => $user->id));
 }
